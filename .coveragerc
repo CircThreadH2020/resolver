@@ -1,0 +1,6 @@
+[run]
+omit =
+    DOM_resolver/__main__.py
+    venv/*
+    tests/*
+    setup.py

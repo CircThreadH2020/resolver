@@ -1,0 +1,9 @@
+{
+    "Product_Model_Metadata_Catalogue":{
+        "ROOT_ADDRESS": "http://95.60.60.92:5000",
+        "ALL_METADATA": "/getAllMetadata",
+        "ALL_METADATA_RETURN_KEY": "metaData",
+        "DATA": "/getModelData?p_idModel=",
+        "ID": "GTIN"
+    }
+}
