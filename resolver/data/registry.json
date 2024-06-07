@@ -1,0 +1,28 @@
+{
+    "Digital Object Memory Resolver": {
+        "id": "2",
+        "rootAddress": "http://dfki-3115.dfki.de:20005",
+        "apiDocumentationAdress": "http://dfki-3115.dfki.de:20005/openapi.json",
+        "serviceType": "platform core service",
+        "serviceTags": ["utils", "test"],
+        "serviceOwner": "Deutsches Forschungszentrum für Künstliche Intelligenz GmbH",
+        "maintainerContact": "leonhard.kunz@dfki.de",
+        "maintainanceStatus": "maintained",
+        "sourceCode": "https://github.com/CircThreadH2020/resolver",
+        "version": "0.1.0",
+        "lastUpdated": "20.12.2023"
+    },
+    "CircThread Event interpreation and Information Recommendation Service": {
+        "id": "3",
+        "rootAddress": "http://dfki-3122.dfki.de:1414/",
+        "apiDocumentationAdress": "http://dfki-3122.dfki.de:1414/openapi.json",
+        "serviceType": "platform core service",
+        "serviceTags": ["utils"],
+        "serviceOwner": "Deutsches Forschungszentrum für Künstliche Intelligenz GmbH",
+        "maintainerContact": "jonas.brozeit@dfki.de",
+        "maintainanceStatus": "maintained",
+        "sourceCode": "https://github.com/CircThreadH2020/circthread_event_interpretation_and_information_recommendation_engine",
+        "version": "0.1.0",
+        "lastUpdated": "20.12.2023"
+    }
+}

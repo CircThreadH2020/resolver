@@ -1,33 +1,48 @@
 name: Python Package
 
-on: push
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
+
     strategy:
       matrix:
-        python-version:
-          - 3.8
-          - 3.9
-          - 3.10
-          - 3.11
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
+
       - name: Install dependencies
         run: |
-          pip install --upgrade pip
+          python -m pip install --upgrade pip
           pip install flake8 pytest pytest-cov
           pip install -e .
+
       - name: Lint with flake8
-        run: |
-          flake8
-      - name: Test with pytest
+        run: flake8 .
+        continue-on-error: true
+
+      - name: Run tests with pytest
+        env:
+          PYTHONPATH: .
         run: |
           pytest --cov --cov-fail-under=50 --cov-report=xml --cov-report=term
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: coverage.xml

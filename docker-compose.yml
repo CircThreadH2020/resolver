@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  resolver-app:
+    build:
+      context: .
+      dockerfile: resolver.dockerfile
+    ports:
+      - "20005:20005"
+
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx.dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - resolver-app

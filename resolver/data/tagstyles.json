@@ -1,0 +1,18 @@
+{
+    "sample pattern": {
+    "ENTIRE_PATTERN": "(TE\\d{2}[A-Z]{2}\\d)--(\\d{2}E\\d{6})",
+    "contents": {
+        "product_model_number": "(TE\\d{2}[A-Z]{2}\\d)",
+        "serial_number": "(\\d{2}E\\d{6})"
+        }
+    },
+    "digital link type": {
+        "ENTIRE_PATTERN": "https?://([^/]+)/.*/\\d{2}/.*",
+        "contents": {
+            "GTIN": "01/(\\d{13})",
+            "consumer_product_variant": "22/([^/|$]+)",
+            "batch or lot number": "10/([^/|$]+)",
+            "serial_number": "21/([^/|$]+)"
+        }
+    }
+}

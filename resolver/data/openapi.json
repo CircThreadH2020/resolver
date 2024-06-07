@@ -1,0 +1,50 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+        "/example": {
+            "get": {
+                "tags": ["example-tag"],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/test": {
+            "post": {
+                "tags": ["test-tag"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TestSchema"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "created"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "TestSchema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    }
+}
